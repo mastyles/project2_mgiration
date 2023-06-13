@@ -1,0 +1,40 @@
+// Challenge 2:
+
+<?php
+
+function findDuplicates(array $arr) {
+    $duplicates = [];
+    $tmp = [];
+
+    foreach ($arr as $val) {
+        if (isset($tmp[$val])) {
+            $duplicates[] = $val;
+        } else {
+            $tmp[$val] = true;
+        }
+    }
+
+    return $duplicates;
+}
+
+?>
+
+// Challenge 4:
+
+<?php
+
+function groupByOwnersService(array $arr) {
+    $grouped = [];
+
+    foreach ($arr as $key => $owner) {
+        if (!isset($grouped[$owner])) {
+            $grouped[$owner] = [];
+        }
+
+        $grouped[$owner][] = $key;
+    }
+
+    return $grouped;
+}
+
+?>
